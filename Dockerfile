@@ -1,5 +1,7 @@
 FROM debian:10
 
+ENV TZ=Asia/Shanghai LANG=C.UTF-8 DEBIAN_FRONTEND=noninteractive
+
 RUN sed -i -e 's@ .*.ubuntu.com@ http://mirrors.aliyun.com@g' -e 's@ .*.debian.org@ http://mirrors.aliyun.com@g' /etc/apt/sources.list; \
     apt-get update ; apt-get install -y php-dev php-fpm php-mysql php-redis php-pear php-pgsql php-amqp php-bcmath php-curl php-date \
       php-dom php-gd php-imagick php-intl php-json php-xml php-mbstring php-memcache php-memcached php-mongodb php-stomp \
