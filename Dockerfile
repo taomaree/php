@@ -12,7 +12,7 @@ RUN sed -i -e 's@ .*.ubuntu.com@ http://mirrors.aliyun.com@g' -e 's@ .*.debian.o
     mkdir -p /etc/service/php /run/php ; \
     bash -c 'echo -e "extension=mcrypt.so\n" > /etc/php/7.3/fpm/conf.d/99-mcrypt.ini' ;\
     bash -c 'echo -e "upload_max_filesize=80M\npost_max_size=80M\ndate.timezone=Asia/Shanghai" > /etc/php/7.3/fpm/conf.d/99-php.ini' ;\
-    sed -i -e 's/^listen =.*/listen = 127.0.0.1:9001/g' /etc/php/7.3/fpm/pool.d/www.conf ;\
+    sed -i -e 's/^listen =.*/listen = 0.0.0.0:9000/g' /etc/php/7.3/fpm/pool.d/www.conf ;\
     bash -c 'echo -e "#!/bin/bash\nexec /usr/sbin/php-fpm7.3 --nodaemonize --fpm-config /etc/php/7.3/fpm/php-fpm.conf" > /etc/service/php/run' ; \
     chmod 755 /etc/service/php/run
 
