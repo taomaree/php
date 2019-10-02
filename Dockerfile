@@ -3,7 +3,7 @@ FROM debian:10
 RUN sed -i -e 's@ .*.ubuntu.com@ http://mirrors.aliyun.com@g' -e 's@ .*.debian.org@ http://mirrors.aliyun.com@g' /etc/apt/sources.list; \
     apt-get update ; apt-get install -y php-dev php-fpm php-mysql php-redis php-pear php-pgsql php-amqp php-bcmath php-curl php-date \
       php-dom php-gd php-imagick php-intl php-json php-xml php-mbstring php-memcache php-memcached php-mongodb php-stomp \
-      runit mariadb-client libmcrypt-dev \
+      runit procps mariadb-client libmcrypt-dev \
       libjemalloc-dev libargon2-0-dev libnghttp2-dev \
       libmagickwand-dev imagemagick librabbitmq-dev libxml2-dev libc6-dev  libevent-dev \
       libsodium-dev libssl-dev libmcrypt-dev libcurl4-openssl-dev libmemcached-dev \
