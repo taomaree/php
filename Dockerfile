@@ -5,7 +5,10 @@ ENV TZ=Asia/Shanghai LANG=C.UTF-8 DEBIAN_FRONTEND=noninteractive
 RUN sed -i -e 's@ .*.ubuntu.com@ http://mirrors.aliyun.com@g' -e 's@ .*.debian.org@ http://mirrors.aliyun.com@g' /etc/apt/sources.list; \
     apt-get update ; apt-get install -y php-dev php-fpm php-mysql php-redis php-pear php-pgsql php-amqp php-bcmath php-curl php-date \
       php-dom php-gd php-imagick php-intl php-json php-xml php-mbstring php-memcache php-memcached php-mongodb php-soap php-stomp php-zip \
-      cron logrotate runit rsyslog-kafka gosu procps vim wget curl bsdiff mariadb-client libmcrypt-dev \
+      mariadb-client libmcrypt-dev \
+      runit tzdata gosu procps psmisc wget curl bsdiff cron logrotate rsyslog-kafka iproute2 iputils-ping iputils-arping \
+      telnet less vim unzip gosu fonts-dejavu-core tcpdump \
+      net-tools socat netcat traceroute jq mtr-tiny dnsutils \
       libjemalloc-dev libargon2-0-dev libnghttp2-dev \
       libmagickwand-dev imagemagick librabbitmq-dev libxml2-dev libc6-dev  libevent-dev \
       libsodium-dev libssl-dev libmcrypt-dev libcurl4-openssl-dev libmemcached-dev \
